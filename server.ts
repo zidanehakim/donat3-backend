@@ -6,23 +6,18 @@ import { connectDB } from "./config/db";
 
 import cors from "cors";
 
-// import mongoose from "mongoose";
-// import dotenv from "dotenv";
-// import cors from "cors";
-// import helmet from "helmet";
-// import morgan from "morgan";
-// import xss from "xss-clean";
-// import rateLimit from "express-rate-limit";
-// import hpp from "hpp";
-// import path from "path";
-// import expressSanitizer from "express-sanitizer";
-
 // Connect to DB
 connectDB();
 
 const app = express();
 
-app.use(cors({ origin: "*" }));
+app.use(
+  cors({
+    origin: "https://donat3-frontend-7i8p.vercel.app", // or '*' to allow all
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 // Middleware
 app.use(express.json());
 
