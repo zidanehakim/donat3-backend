@@ -13,7 +13,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://donat3-frontend-7i8p.vercel.app", // or '*' to allow all
+    origin: [
+      "https://donat3-frontend-7i8p.vercel.app",
+      "https://donat3-frontend-7i8p-1zadjcw1r-zidanehakims-projects.vercel.app/",
+    ], // or '*' to allow all
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
